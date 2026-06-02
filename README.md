@@ -128,8 +128,6 @@ Dropdown:Destroy()
 ```lua
 UI:SetFont("rbxasset://...")
 ```
-
-
-[Luanny UI Preview](https://youtu.be/6lnIYMpGUJA?si=UOT2t2i5zMre5MPQ)
+[![Luanny Ui](https://uibin.orqan.xyz/api/card?id=09669d82-2171-4559-9126-9d0fcefdbdc4&theme=purple)](https://uibin.orqan.xyz/library/09669d82-2171-4559-9126-9d0fcefdbdc4)
 
 ## I would appreciate it if you used it; more things will be added soon. :)
