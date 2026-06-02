@@ -1,14 +1,3 @@
---[[
-  _       _    _          _   _ _   _   __     __  _    _ _____ 
- | |     | |  | |   /\   | \ | | \ | |  \ \   / / | |  | |_   _|
- | |     | |  | |  /  \  |  \| |  \| |   \ \_/ /  | |  | | | |  
- | |     | |  | | / /\ \ | . ` | . ` |    \   /   | |  | | | |  
- | |____ | |__| |/ ____ \| |\  | |\  |     | |    | |__| |_| |_ 
- |______| \____//_/    \_\_| \_|_| \_|     |_|     \____/|_____|
-                                                              
-  >> Developed by dyxreign
---]]
-
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
