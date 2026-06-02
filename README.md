@@ -112,3 +112,20 @@ local Dropdown = Tab:Dropdown({
     end
 })
 ```
+## Set Title
+```lua
+Dropdown:SetTitle("Title Example")
+```
+## Set Option
+```lua
+Dropdown:Set("Option 2")
+```
+## Destroy Dropdown
+```lua
+Dropdown:Destroy()
+```
+# Set a Custom Font
+```lua
+UI:SetFont("rbxasset://...")
+```
+## I would appreciate it if you used it; more things will be added soon. :)
