@@ -1,10 +1,20 @@
+--[[
+  _       _    _          _   _ _   _   __     __  _    _ _____ 
+ | |     | |  | |   /\   | \ | | \ | |  \ \   / / | |  | |_   _|
+ | |     | |  | |  /  \  |  \| |  \| |   \ \_/ /  | |  | | | |  
+ | |     | |  | | / /\ \ | . ` | . ` |    \   /   | |  | | | |  
+ | |____ | |__| |/ ____ \| |\  | |\  |     | |    | |__| |_| |_ 
+ |______| \____//_/    \_\_| \_|_| \_|     |_|     \____/|_____|
+--]]
+
+
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local CoreGui = (type(gethui) == "function" and gethui()) or (pcall(function() return game:GetService("CoreGui") end) and game:GetService("CoreGui")) or Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local TopPlusUi = {}
-TopPlusUi.__index = TopPlusUi
+local LuannyUi = {}
+LuannyUi.__index = LuannyUi
 
 local AllTextElements = {}
 local FontUI = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
@@ -15,12 +25,12 @@ local successIcons, Lucide = pcall(function()
 end)
 local Icons = (successIcons and type(Lucide) == "table") and Lucide or setmetatable({}, {__index = function() return "" end})
 
-if CoreGui:FindFirstChild("TopPlusNotifyScreen") then
-    CoreGui.TopPlusNotifyScreen:Destroy()
+if CoreGui:FindFirstChild("LuannyNotifyScreen") then
+    CoreGui.LuannyNotifyScreen:Destroy()
 end
 
 local NotifyScreen = Instance.new("ScreenGui")
-NotifyScreen.Name = "TopPlusNotifyScreen"
+NotifyScreen.Name = "LuannyNotifyScreen"
 NotifyScreen.IgnoreGuiInset = true
 NotifyScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 NotifyScreen.Parent = CoreGui
@@ -37,7 +47,7 @@ ListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
 ListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
 ListLayout.Padding = UDim.new(0, 10)
 
-function TopPlusUi:Notify(options)
+function LuannyUi:Notify(options)
     local titleText = options.Title or "Notification"
     local descText = options.Desc or ""
     local duration = options.Duration or 5
@@ -177,7 +187,7 @@ function TopPlusUi:Notify(options)
     end)
 end
 
-function TopPlusUi:SetFont(fontAsset)
+function LuannyUi:SetFont(fontAsset)
     if typeof(fontAsset) == "string" then
         FontUI = Font.new(fontAsset, Enum.FontWeight.Medium, Enum.FontStyle.Normal)
         FontTitle = Font.new(fontAsset, Enum.FontWeight.Bold, Enum.FontStyle.Normal)
@@ -277,26 +287,26 @@ local function ToggleWindow(target, windowHeight)
     end
 end
 
-function TopPlusUi:CreateWindow(config)
+function LuannyUi:CreateWindow(config)
     if Initialized then return self end
     Initialized = true
 
     WindowConfig = {
-        Title = config.Title or "Hub",
+        Title = config.Title or "Luanny UI",
         Author = config.Author or "Snow",
         Transparent = config.Transparent or false,
         Theme = config.Theme or "Dark",
         ShowWindow = config.ShowWindow == nil and true or config.ShowWindow
     }
 
-    if CoreGui:FindFirstChild("TopPlusUI") then CoreGui.TopPlusUI:Destroy() end
+    if CoreGui:FindFirstChild("LuannyUI") then CoreGui.LuannyUI:Destroy() end
 
     local bgColor = WindowConfig.Theme == "Light" and Color3.fromRGB(240, 240, 240) or Color3.fromRGB(15, 15, 15)
     local strokeColor = WindowConfig.Theme == "Light" and Color3.fromRGB(200, 200, 200) or Color3.fromRGB(45, 45, 45)
     local bgAlpha = WindowConfig.Transparent and 0.25 or 0
 
     ScreenGui = Instance.new("ScreenGui")
-    ScreenGui.Name = "TopPlusUI"
+    ScreenGui.Name = "LuannyUI"
     ScreenGui.IgnoreGuiInset = true 
     ScreenGui.ResetOnSpawn = false
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling 
@@ -428,8 +438,8 @@ end
 local TabClass = {}
 TabClass.__index = TabClass
 
-function TopPlusUi:Tab(options)
-    if not Initialized then self:CreateWindow({Title = "Hub", Author = "Unknown"}) end
+function LuannyUi:Tab(options)
+    if not Initialized then self:CreateWindow({Title = "Luanny UI", Author = "Unknown"}) end
     LayoutOrderCount = LayoutOrderCount + 1
 
     local titleName = options.Title or "Tab"
@@ -679,7 +689,7 @@ function TabClass:Input(options)
     Instance.new("UIStroke", boxBg).Color = isLight and Color3.fromRGB(180, 180, 185) or Color3.fromRGB(45, 45, 50)
     
     local box = Instance.new("TextBox", boxBg)
-    box.Size = UDim2.new(1, -10, 1, 0); box.Position = UDim2.new(0, 5, 0, 0); box.BackgroundTransparency = 1; box.Text = options.Value or ""; box.PlaceholderText = options.Placeholder or ""; box.TextColor3 = Color3.fromRGB(255, 255, 255); box.PlaceholderColor3 = Color3.fromRGB(150, 150, 150); box.FontFace = FontUI; box.TextSize = 12; box.TextWrapped = isTextarea; box.ClearTextOnFocus = not isTextarea; box.TextXAlignment = isTextarea and Enum.TextXAlignment.Left or Enum.TextXAlignment.Center; box.TextYAlignment = isTextarea and Enum.TextYAlignment.Top or Enum.TextYAlignment.Center
+    box.Size = UDim2.new(1, -10, 1, 0); box.Position = UDim2.new(0, 5, 0, 0); box.BackgroundTransparency = 1; box.Text = options.Value or "" ; box.PlaceholderText = options.Placeholder or ""; box.TextColor3 = Color3.fromRGB(255, 255, 255); box.PlaceholderColor3 = Color3.fromRGB(150, 150, 150); box.FontFace = FontUI; box.TextSize = 12; box.TextWrapped = isTextarea; box.ClearTextOnFocus = not isTextarea; box.TextXAlignment = isTextarea and Enum.TextXAlignment.Left or Enum.TextXAlignment.Center; box.TextYAlignment = isTextarea and Enum.TextYAlignment.Top or Enum.TextYAlignment.Center
     RegisterText(box)
     
     box.FocusLost:Connect(function()
@@ -943,4 +953,4 @@ function TabClass:Slider(options)
     }
 end
 
-return TopPlusUi
+return LuannyUi
