@@ -3,5 +3,5 @@
 ## Documation
 # Loader
 ```lua
-local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/dyxreign/TopPlus-UI/main/Source.lua"))()
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/dyxreign/Luanny-UI/refs/heads/main/src/Luanny.lua"))()
 ```
