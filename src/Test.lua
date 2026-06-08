@@ -4,10 +4,7 @@
  | |     | |  | |  /  \  |  \| |  \| |   \ \_/ /  | |  | | | |  
  | |     | |  | | / /\ \ | . ` | . ` |    \   /   | |  | | | |  
  | |____ | |__| |/ ____ \| |\  | |\  |     | |    | |__| |_| |_ 
- |______| \____//_/    \_\_| \_|_| \_|     |_|     \____/|_____|
-                                                                
-  >> LUANNY INTERFACE SUITE (v2.4)
-  >> Base Completa + Themes + Rayfield Style ColorPicker
+ |______| \____//_/    \_\_| \_|_| \_|     |_|     \____/|_____|                                                              
 --]]
 
 local TweenService = game:GetService("TweenService")
