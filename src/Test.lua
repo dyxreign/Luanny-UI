@@ -6,8 +6,6 @@
  | |____ | |__| |/ ____ \| |\  | |\  |     | |    | |__| |_| |_ 
  |______| \____//_/    \_\_| \_|_| \_|     |_|     \____/|_____|
                                                                 
-  >> LUANNY INTERFACE SUITE (v2.6 - Mobile Supported)
-  >> Base + Themes + Rayfield ColorPicker + Dynamic Toolbar
 --]]
 
 local TweenService = game:GetService("TweenService")
